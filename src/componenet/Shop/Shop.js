@@ -47,6 +47,11 @@ const Shop = () => {
         <div className="twin-container">
             <div className="product-container">
                 {
+                    products.length === 0 && <div className="spinner-border" role="status">
+                    <span className="visually-hidden">Loading...</span>
+                  </div>
+                }
+                {
                     products.map(pd => <Product
                         key={pd.key}
                         showAddToCart={true}
